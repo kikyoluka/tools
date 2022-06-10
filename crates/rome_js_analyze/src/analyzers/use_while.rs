@@ -1,4 +1,4 @@
-use rome_analyze::{ActionCategory, Rule, RuleCategory, RuleDiagnostic};
+use rome_analyze::{declare_rule, ActionCategory, Rule, RuleCategory, RuleDiagnostic};
 use rome_console::markup;
 use rome_diagnostics::Applicability;
 use rome_js_factory::make;
@@ -7,10 +7,11 @@ use rome_rowan::AstNodeExt;
 
 use crate::JsRuleAction;
 
-pub(crate) enum UseWhile {}
+declare_rule! {
+    pub(crate) UseWhile = "useWhile"
+}
 
 impl Rule for UseWhile {
-    const NAME: &'static str = "useWhile";
     const CATEGORY: RuleCategory = RuleCategory::Lint;
 
     type Query = JsForStatement;

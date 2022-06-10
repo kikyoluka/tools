@@ -5,10 +5,12 @@ use rome_rowan::{AstNode, Language, SyntaxNode, TextRange, WalkEvent};
 
 mod categories;
 mod registry;
+mod rule;
 mod signals;
 
 pub use crate::categories::{ActionCategory, RuleCategories, RuleCategory};
-pub use crate::registry::{LanguageRoot, Rule, RuleAction, RuleDiagnostic, RuleRegistry};
+pub use crate::registry::{LanguageRoot, MetadataIter, RuleRegistry};
+pub use crate::rule::{Rule, RuleAction, RuleDiagnostic, RuleMeta};
 pub use crate::signals::{AnalyzerAction, AnalyzerSignal};
 
 /// Allows filtering the list of rules that will be executed in a run of the analyzer,

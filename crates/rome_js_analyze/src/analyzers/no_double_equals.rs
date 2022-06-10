@@ -1,4 +1,4 @@
-use rome_analyze::{ActionCategory, Rule, RuleCategory, RuleDiagnostic};
+use rome_analyze::{declare_rule, ActionCategory, Rule, RuleCategory, RuleDiagnostic};
 use rome_console::markup;
 use rome_diagnostics::Applicability;
 use rome_js_factory::make;
@@ -8,10 +8,11 @@ use rome_rowan::{AstNodeExt, SyntaxResult};
 
 use crate::JsRuleAction;
 
-pub(crate) enum NoDoubleEquals {}
+declare_rule! {
+    pub(crate) NoDoubleEquals = "noDoubleEquals"
+}
 
 impl Rule for NoDoubleEquals {
-    const NAME: &'static str = "noDoubleEquals";
     const CATEGORY: RuleCategory = RuleCategory::Lint;
 
     type Query = JsBinaryExpression;

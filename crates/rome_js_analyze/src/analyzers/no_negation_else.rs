@@ -1,4 +1,4 @@
-use rome_analyze::{ActionCategory, Rule, RuleCategory, RuleDiagnostic};
+use rome_analyze::{declare_rule, ActionCategory, Rule, RuleCategory, RuleDiagnostic};
 use rome_console::markup;
 use rome_diagnostics::Applicability;
 use rome_js_factory::make;
@@ -10,10 +10,11 @@ use rome_rowan::{AstNode, AstNodeExt};
 
 use crate::JsRuleAction;
 
-pub(crate) enum NoNegationElse {}
+declare_rule! {
+    pub(crate) NoNegationElse = "noNegationElse"
+}
 
 impl Rule for NoNegationElse {
-    const NAME: &'static str = "noNegationElse";
     const CATEGORY: RuleCategory = RuleCategory::Lint;
 
     type Query = JsAnyCondition;

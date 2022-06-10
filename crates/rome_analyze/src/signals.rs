@@ -9,7 +9,8 @@ use rome_rowan::{AstNode, Direction, Language, SyntaxNode, TextRange};
 
 use crate::{
     categories::ActionCategory,
-    registry::{LanguageRoot, Rule, RuleLanguage, RuleRoot},
+    registry::{LanguageRoot, RuleLanguage, RuleRoot},
+    rule::Rule,
 };
 
 /// Event raised by the analyzer when a [Rule](crate::registry::Rule)

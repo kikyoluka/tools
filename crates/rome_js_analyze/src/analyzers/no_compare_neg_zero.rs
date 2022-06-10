@@ -1,4 +1,4 @@
-use rome_analyze::{ActionCategory, Rule, RuleCategory, RuleDiagnostic};
+use rome_analyze::{declare_rule, ActionCategory, Rule, RuleCategory, RuleDiagnostic};
 use rome_console::markup;
 use rome_diagnostics::Applicability;
 use rome_js_factory::make;
@@ -14,10 +14,12 @@ pub struct NoCompareNegZeroState {
     left_need_replaced: bool,
     right_need_replaced: bool,
 }
-pub(crate) enum NoCompareNegZero {}
+
+declare_rule! {
+    pub(crate) NoCompareNegZero = "noCompareNegZero"
+}
 
 impl Rule for NoCompareNegZero {
-    const NAME: &'static str = "noCompareNegZero";
     const CATEGORY: RuleCategory = RuleCategory::Lint;
 
     type Query = JsBinaryExpression;

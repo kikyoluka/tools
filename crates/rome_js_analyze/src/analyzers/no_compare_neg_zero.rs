@@ -16,6 +16,21 @@ pub struct NoCompareNegZeroState {
 }
 
 declare_rule! {
+    /// Disallow comparing against `-0`
+    ///
+    /// ## Examples
+    ///
+    /// ### Invalid
+    ///
+    /// ```js,expect_diagnostic
+    /// (1 >= -0)
+    /// ```
+    ///
+    /// ### Valid
+    ///
+    /// ```js
+    /// (1 >= 0)
+    ///```
     pub(crate) NoCompareNegZero = "noCompareNegZero"
 }
 

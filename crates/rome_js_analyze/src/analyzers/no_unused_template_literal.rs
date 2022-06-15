@@ -10,7 +10,9 @@ use rome_rowan::{AstNode, AstNodeExt, AstNodeList, SyntaxToken};
 
 use crate::JsRuleAction;
 
-pub(crate) enum NoUnusedTemplateLiteral {}
+declare_rule! {
+    pub(crate) NoUnusedTemplateLiteral = "noUnusedTemplateLiteral"
+}
 
 impl Rule for NoUnusedTemplateLiteral {
     const NAME: &'static str = "noUnusedTemplateLiteral";

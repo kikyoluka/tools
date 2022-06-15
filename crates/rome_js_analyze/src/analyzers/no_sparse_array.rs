@@ -9,7 +9,9 @@ use rome_rowan::{AstNode, AstNodeExt, AstSeparatedList};
 
 use crate::JsRuleAction;
 
-pub(crate) enum NoSparseArray {}
+declare_rule! {
+    pub(crate) NoSparseArray = "noSparseArray"
+}
 
 impl Rule for NoSparseArray {
     const NAME: &'static str = "noSparseArray";

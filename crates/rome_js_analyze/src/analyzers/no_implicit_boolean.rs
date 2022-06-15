@@ -10,7 +10,9 @@ use rome_rowan::{AstNode, AstNodeExt};
 
 use crate::JsRuleAction;
 
-pub(crate) enum NoImplicitBoolean {}
+declare_rule! {
+    pub(crate) NoImplicitBoolean = "noImplicitBoolean"
+}
 
 impl Rule for NoImplicitBoolean {
     const NAME: &'static str = "noImplicitBoolean";

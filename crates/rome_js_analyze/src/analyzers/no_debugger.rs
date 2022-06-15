@@ -9,7 +9,9 @@ use rome_rowan::{AstNode, AstNodeExt};
 
 use crate::JsRuleAction;
 
-pub(crate) enum NoDebugger {}
+declare_rule! {
+    pub(crate) NoDebugger = "noDebugger"
+}
 
 impl Rule for NoDebugger {
     const NAME: &'static str = "noDebugger";

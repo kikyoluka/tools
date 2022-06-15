@@ -4,9 +4,7 @@ use rome_console::markup;
 use rome_diagnostics::Applicability;
 use rome_js_factory::make;
 use rome_js_syntax::JsSyntaxKind::*;
-use rome_js_syntax::{
-    JsAnyExpression, JsAnyLiteralExpression, JsAnyTemplateElement, JsTemplate,
-};
+use rome_js_syntax::{JsAnyExpression, JsAnyLiteralExpression, JsAnyTemplateElement, JsTemplate};
 use rome_rowan::{AstNode, AstNodeExt, AstNodeList, SyntaxToken};
 
 use crate::JsRuleAction;
